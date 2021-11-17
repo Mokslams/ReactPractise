@@ -1,5 +1,5 @@
 let items = {
-    "grozine": [
+    grozine: [
         {
             isbn: "GR1236K",
             year: 2000,
@@ -29,7 +29,7 @@ let items = {
             price: 80
         }
     ],
-    "moksline": [
+    moksline: [
         {
             isbn: "MK8900R",
             year: 2001,
@@ -59,7 +59,7 @@ let items = {
             price: 52
         }
     ],
-    "fantastine": [
+    fantastine: [
         {
             isbn: "FN6781R",
             year: 2004,
