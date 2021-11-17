@@ -6,4 +6,4 @@
 # ReactPractise
 
 Author: 
-Edvinas : https://github.com/Mokslams
+ https://github.com/Mokslams
