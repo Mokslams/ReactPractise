@@ -309,8 +309,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var renderGroup = function renderGroup(group) {
-  return "\n<div class=\"card-header\" id=\"headingOne\">\n      <h2 class=\"mb-0\">\n        <button class=\"btn btn-link btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#".concat(group, "\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n          ").concat(group, "\n        </button>\n      </h2>\n    </div>\n\n    <div id=\"").concat(group, "\" class=\"collapse\" aria-labelledby=\"headingOne\" data-parent=\"#accordionExample\">\n      <div class=\"card-body\">\n      \n      </div>\n    </div>");
+var renderGroup = function renderGroup(group, category) {
+  return "\n<div class=\"card-header\" id=\"headingOne\">\n      <h2 class=\"mb-0\">\n        <button class=\"btn btn-link btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#".concat(group, "\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n          ").concat(group, ",").concat(category, "\n        </button>\n      </h2>\n    </div>\n\n    <div id=\"").concat(group, "\" class=\"collapse\" aria-labelledby=\"headingOne\" data-parent=\"#accordionExample\">\n      <div class=\"card-body\">\n      \n      </div>\n    </div>");
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderGroup);
@@ -343,7 +343,7 @@ var showBooks = function showBooks(data) {
   for (var type in data) {
     var category = document.createElement('div');
     category.className = "card";
-    category.innerHTML = (0,_renderGroup__WEBPACK_IMPORTED_MODULE_0__["default"])(type);
+    category.innerHTML = (0,_renderGroup__WEBPACK_IMPORTED_MODULE_0__["default"])(type, data[type].length);
     document.querySelector('.accordion').appendChild(category);
     console.log("".concat(type, ":"));
 
