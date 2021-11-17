@@ -393,7 +393,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var sortBooks = function sortBooks(data) {
   for (var category in data) {
-    data[category].sort(function (el1, el2) {
+    data[category] = data[category].sort(function (el1, el2) {
       if (el1.name < el2.name) {
         return -1;
       }
