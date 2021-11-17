@@ -14,10 +14,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_books__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data/books */ "./src/data/books.js");
 /* harmony import */ var _data_books__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_data_books__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _modules_showBooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/showBooks */ "./src/modules/showBooks.js");
+/* harmony import */ var _modules_sortBooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/sortBooks */ "./src/modules/sortBooks.js");
 
 
 
 
+
+(0,_modules_sortBooks__WEBPACK_IMPORTED_MODULE_4__["default"])((_data_books__WEBPACK_IMPORTED_MODULE_2___default()));
 (0,_modules_showBooks__WEBPACK_IMPORTED_MODULE_3__["default"])(_data_items__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
@@ -355,6 +358,10 @@ var showBooks = function showBooks(data) {
         var book = _step.value;
 
         for (var _data in book) {
+          if (book[_data] === 2021) {
+            book.name += " (Nauja knyga)";
+          }
+
           console.log("".concat(_data, ":").concat(book[_data]));
           document.querySelector("#".concat(type, " .card-body")).innerHTML += (0,_renderBooks__WEBPACK_IMPORTED_MODULE_1__["default"])(_data, book[_data]);
         }
@@ -370,6 +377,37 @@ var showBooks = function showBooks(data) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showBooks);
+
+/***/ }),
+
+/***/ "./src/modules/sortBooks.js":
+/*!**********************************!*\
+  !*** ./src/modules/sortBooks.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var sortBooks = function sortBooks(data) {
+  for (var category in data) {
+    data[category].sort(function (el1, el2) {
+      if (el1.name < el2.name) {
+        return -1;
+      }
+
+      if (el1.name > el2.name) {
+        return 1;
+      }
+
+      return 0;
+    });
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sortBooks);
 
 /***/ }),
 
